@@ -3,22 +3,23 @@ unit UEfetuarPedidoDTOImpl;
 interface
 
 uses
-  Soap.InvokeRegistry, UPizzaTamanhoEnum, UPizzaSaborEnum,
+  Soap.InvokeRegistry, UPizzaTamanhoEnum,
+  UPizzaSaborEnum,
   MVCFramework.Serializer.Commons;
 
 type
   [MVCNameCase(ncLowerCase)]
   TEfetuarPedidoDTO = class(TRemotable)
   private
-    FPizzaTamanho: TPizzaTamanhoEnum;
-    FPizzaSabor: TPizzaSaborEnum;
-    FDocumentoCliente: String;
+    fpizzatamanho: TPizzaTamanhoEnum;
+    fpizzasabor: TPizzaSaborEnum;
+    fdocumentocliente: String;
   published
-    property PizzaTamanho: TPizzaTamanhoEnum read FPizzaTamanho
-      write FPizzaTamanho;
-    property PizzaSabor: TPizzaSaborEnum read FPizzaSabor write FPizzaSabor;
-    property DocumentoCliente: String read FDocumentoCliente
-      write FDocumentoCliente;
+    property pizzatamanho: TPizzaTamanhoEnum read FpizzaTamanho
+      write fpizzaTamanho;
+    property pizzasabor: TPizzaSaborEnum read fpizzaSabor write fpizzaSabor;
+    property documentocliente: String read fdocumentoCliente
+      write fdocumentoCliente;
   end;
 
 implementation

@@ -3,10 +3,10 @@
         <ProjectGuid>{FDA6260F-BEE6-4E9D-AD9F-F23B9BF364A9}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
-        <Projects Include="server\dpr\PizzariaBackend.dproj">
+        <Projects Include="client\dpr\PizzariaFrontend.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="client\dpr\PizzariaFrontend.dproj">
+        <Projects Include="server\dpr\PizzariaBackend.dproj">
             <Dependencies/>
         </Projects>
     </ItemGroup>
@@ -17,15 +17,6 @@
             <Default.Personality/>
         </BorlandProject>
     </ProjectExtensions>
-    <Target Name="PizzariaBackend">
-        <MSBuild Projects="server\dpr\PizzariaBackend.dproj"/>
-    </Target>
-    <Target Name="PizzariaBackend:Clean">
-        <MSBuild Projects="server\dpr\PizzariaBackend.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="PizzariaBackend:Make">
-        <MSBuild Projects="server\dpr\PizzariaBackend.dproj" Targets="Make"/>
-    </Target>
     <Target Name="PizzariaFrontend">
         <MSBuild Projects="client\dpr\PizzariaFrontend.dproj"/>
     </Target>
@@ -35,14 +26,23 @@
     <Target Name="PizzariaFrontend:Make">
         <MSBuild Projects="client\dpr\PizzariaFrontend.dproj" Targets="Make"/>
     </Target>
+    <Target Name="PizzariaBackend">
+        <MSBuild Projects="server\dpr\PizzariaBackend.dproj"/>
+    </Target>
+    <Target Name="PizzariaBackend:Clean">
+        <MSBuild Projects="server\dpr\PizzariaBackend.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PizzariaBackend:Make">
+        <MSBuild Projects="server\dpr\PizzariaBackend.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="PizzariaBackend;PizzariaFrontend"/>
+        <CallTarget Targets="PizzariaFrontend;PizzariaBackend"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="PizzariaBackend:Clean;PizzariaFrontend:Clean"/>
+        <CallTarget Targets="PizzariaFrontend:Clean;PizzariaBackend:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="PizzariaBackend:Make;PizzariaFrontend:Make"/>
+        <CallTarget Targets="PizzariaFrontend:Make;PizzariaBackend:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>

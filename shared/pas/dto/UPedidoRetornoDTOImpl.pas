@@ -9,19 +9,19 @@ uses
 type
 
   [MVCNameCase(ncLowerCase)]
-  TPedidoRetornoDTO = class(TRemotable)
+  Tpedidoretornodto = class(TRemotable)
   private
-    FPizzaTamanho: TPizzaTamanhoEnum;
-    FPizzaSabor: TPizzaSaborEnum;
-    FValorTotalPedido: Currency;
-    FTempoPreparo: Integer;
+    fpizzatamanho: TPizzaTamanhoEnum;
+    fpizzasabor: TPizzaSaborEnum;
+    fvalortotalpedido: Currency;
+    ftempopreparo: Integer;
   published
-    property PizzaTamanho: TPizzaTamanhoEnum read FPizzaTamanho
-      write FPizzaTamanho;
-    property PizzaSabor: TPizzaSaborEnum read FPizzaSabor write FPizzaSabor;
-    property ValorTotalPedido: Currency read FValorTotalPedido
-      write FValorTotalPedido;
-    property TempoPreparo: Integer read FTempoPreparo write FTempoPreparo;
+    property pizzaTamanho: TpizzatamanhoEnum read Fpizzatamanho
+      write fpizzaTamanho;
+    property pizzaSabor: TpizzaSaborEnum read fpizzaSabor write fpizzaSabor;
+    property valortotalPedido: Currency read fvalortotalPedido
+      write fvalorTotalPedido;
+    property tempoPreparo: Integer read ftempoPreparo write ftempoPreparo;
   public
     constructor Create(const APizzaTamanho: TPizzaTamanhoEnum;
       const APizzaSabor: TPizzaSaborEnum; const AValorTotalPedido: Currency;
